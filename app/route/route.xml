@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routingManager>
+   <route path="/">
+      <render type="controller" path="/controllers/Main" name="MainController" />
+   </route>
+   <route path="/test">
+      <additional>
+         <subroute path="/foo" />
+         <subroute path="/bar" />
+         <subroute path="/foo/baz" />
+      </additional>
+      <render type="controller" path="/controllers/Test" name="TestController" />
+   </route>
+   <route type="notFound">
+      <header statusCode="404" statusMessage="omgwtf">
+         <render type="view" path="/views/errors/404" />
+      </header>
+   </route>
+</routingManager>
